@@ -66,9 +66,64 @@ var threePM_Events;
 var fourPM_Events;
 var fivePM_Events;
 
+// Creating click events for each button representing each working hour of the day. The values for each respective hour are stored as such in the local storage
+nineAM_Btn.on('click', function () {
+    nineAM_Events = nineAM.val();
+    localStorage.setItem('9AM Event(s):', JSON.stringify(nineAM_Events));
+});
 
+tenAM_Btn.on('click', function () {
+    tenAM_Events = tenAM.val();
+    localStorage.setItem('10AM Event(s):', JSON.stringify(tenAM_Events));
+});
 
+elevenAM_Btn.on('click', function () {
+    elevenAM_Events = elevenAM.val();
+    localStorage.setItem('11AM Event(s):', JSON.stringify(elevenAM_Events));
+});
 
+twelvePM_Btn.on('click', function () {
+    twelvePM_Events = twelvePM.val();
+    localStorage.setItem('12PM Event(s):', JSON.stringify(twelvePM_Events));
+})
 
+onePM_Btn.on('click', function () {
+    onePM_Events = onePM.val();
+    localStorage.setItem('1PM Event(s):', JSON.stringify(onePM_Events));
+})
 
+twoPM_Btn.on('click', function () {
+    twoPM_Events = twoPM.val();
+    localStorage.setItem('2PM Event(s):', JSON.stringify(twoPM_Events));
+})
 
+threePM_Btn.on('click', function () {
+    threePM_Events = threePM.val();
+    localStorage.setItem('3PM Event(s):', JSON.stringify(threePM_Events));
+})
+
+fourPM_Btn.on('click', function () {
+    fourPM_Events = fourPM.val();
+    localStorage.setItem('4PM Event(s):', JSON.stringify(fourPM_Events));
+})
+
+fivePM_Btn.on('click', function () {
+    fivePM_Events = fivePM.val();
+    localStorage.setItem('5PM Event(s):', JSON.stringify(fivePM_Events));
+})
+
+// Populating the placeholder text for each time box with the events stored in the local storage
+function init() {
+    nineAM.attr('placeholder', JSON.parse(localStorage.getItem('9AM Event(s):')));
+    tenAM.attr('placeholder', JSON.parse(localStorage.getItem('10AM Event(s):')));
+    elevenAM.attr('placeholder', JSON.parse(localStorage.getItem('11AM Event(s):')));
+    twelvePM.attr('placeholder', JSON.parse(localStorage.getItem('12PM Event(s):')));
+    onePM.attr('placeholder', JSON.parse(localStorage.getItem('1PM Event(s):')));
+    twoPM.attr('placeholder', JSON.parse(localStorage.getItem('2PM Event(s):')));
+    threePM.attr('placeholder', JSON.parse(localStorage.getItem('3PM Event(s):')));
+    fourPM.attr('placeholder', JSON.parse(localStorage.getItem('4PM Event(s):')));
+    fivePM.attr('placeholder', JSON.parse(localStorage.getItem('5PM Event(s):')));
+}
+
+// Populating the placeholder text for each time box with the events stored in the local storage upon loading the page
+init();
